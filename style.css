@@ -1,0 +1,86 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #B026FF;
+    font-size: 30px;
+}
+
+h1 {
+    text-align: center;
+}
+
+#board {
+    margin-left: auto;
+    margin-right: auto;
+    width: 375px;
+    height: 375px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 5px;
+}
+
+.square {
+    width: 120px;
+    height: 120px;
+    border: 1px solid #F5F5F5;
+    background-color: #F5F5F5;
+    font-size: 80px;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.square:hover {
+    background-color: #FF0075;
+}
+
+#restartButton {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    height: 40px;
+    width: 150px;
+    background-color: #FF007F;
+    border: 1px solid #000000;
+    border-radius: 40px;
+    font-size: 18px;
+}
+
+#restartButton:hover {
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+/* Matrix effect */
+@keyframes matrixEffect {
+    from {
+        transform: translateY(-100%);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+
+.matrix-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: black;
+    overflow: hidden;
+    z-index: -1; /* Keep it behind other content */
+}
+
+.matrix-container span {
+    position: absolute;
+    top: -10vh;
+    font-size: 20px;
+    color: #FF007F; 
+    font-family: monospace;
+    animation: matrixEffect linear infinite;
+}
+
